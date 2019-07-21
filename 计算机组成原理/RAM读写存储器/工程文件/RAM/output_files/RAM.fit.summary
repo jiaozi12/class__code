@@ -1,0 +1,12 @@
+Fitter Status : Successful - Tue Nov 27 15:19:53 2018
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : RAM
+Top-level Entity Name : RAM
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 145 / 12,060 ( 1 % )
+Total pins : 48 / 173 ( 28 % )
+Total virtual pins : 0
+Total memory bits : 49,152 / 239,616 ( 21 % )
+Total PLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,687 @@
+TimeQuest Timing Analyzer report for RAM
+Tue Nov 27 15:20:00 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Setup Transfers
+ 19. Hold Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; RAM                                                                ;
+; Device Family      ; Cyclone                                                            ;
+; Device Name        ; EP1C12Q240C8                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Slow Model                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 156.72 MHz ; 156.72 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -5.381 ; -1705.780     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.854 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.583 ; -1248.411     ;
++-------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                                              ;
++--------+--------------------------------------------------------------------------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                        ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg0  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg1  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg2  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg3  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg4  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg5  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg6  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg7  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg8  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.381 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg9  ; SRAM:SRAM_1|dataout[8]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.337      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg0  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg1  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg2  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg3  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg4  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg5  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg6  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg7  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg8  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.378 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg9  ; SRAM:SRAM_2|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.334      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg0  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg1  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg2  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg3  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg4  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg5  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg6  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg7  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg8  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.368 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg9  ; SRAM:SRAM_3|dataout[6]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.324      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg0  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg1  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg2  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg3  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg4  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg5  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg6  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg7  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg8  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.360 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg9  ; SRAM:SRAM_3|dataout[0]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.316      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg0  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg1  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg2  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg3  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg4  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg5  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg6  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg7  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg8  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.358 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg9  ; SRAM:SRAM_3|dataout[4]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.314      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg0  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg0 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg1  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg2  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg3  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg4  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg5  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg6  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg7  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg8  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg9  ; SRAM:SRAM_1|dataout[11] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg1 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg2 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg3 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg4 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg5 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg6 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg7 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg8 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.356 ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg9 ; SRAM:SRAM_1|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.312      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg0  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg1  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg2  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg3  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg4  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg5  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg6  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg7  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg8  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.352 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~portb_address_reg9  ; SRAM:SRAM_2|dataout[5]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.308      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg0  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg0  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg0 ; SRAM:SRAM_2|dataout[15] ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg1  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg2  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg3  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg4  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg5  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg6  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg7  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg8  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_2|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg9  ; SRAM:SRAM_2|dataout[3]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg1  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg2  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg3  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg4  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg5  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg6  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg7  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
+; -5.349 ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~portb_address_reg8  ; SRAM:SRAM_3|dataout[9]  ; clk          ; clk         ; 1.000        ; -0.007     ; 6.305      ;
++--------+--------------------------------------------------------------------------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                                      ;
++-------+----------------------------------+-------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+-------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.854 ; address[5]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[21]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.869      ;
+; 0.876 ; address[6]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[23]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.891      ;
+; 0.886 ; address[1]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[13]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.901      ;
+; 1.044 ; datain[9]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[40]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.059      ;
+; 1.051 ; e[1]                             ; SRAM:SRAM_2|mem_rtl_0_bypass[10]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.066      ;
+; 1.054 ; address[8]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[27]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.069      ;
+; 1.136 ; wr                               ; SRAM:SRAM_1|mem_rtl_0_bypass[10]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.151      ;
+; 1.140 ; address[9]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[29]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.155      ;
+; 1.155 ; address[0]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[11]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.170      ;
+; 1.157 ; address[7]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[25]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.172      ;
+; 1.199 ; address[3]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[17]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.214      ;
+; 1.225 ; SRAM:SRAM_1|mem_rtl_0_bypass[45] ; SRAM:SRAM_3|dataout[14]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.240      ;
+; 1.249 ; e[0]                             ; SRAM:SRAM_1|mem_rtl_0_bypass[10]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.264      ;
+; 1.315 ; SRAM:SRAM_1|mem_rtl_0_bypass[42] ; SRAM:SRAM_1|dataout[11]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.330      ;
+; 1.315 ; SRAM:SRAM_1|mem_rtl_0_bypass[43] ; SRAM:SRAM_2|dataout[12]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.330      ;
+; 1.316 ; SRAM:SRAM_1|mem_rtl_0_bypass[34] ; SRAM:SRAM_2|dataout[3]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.331      ;
+; 1.317 ; SRAM:SRAM_1|mem_rtl_0_bypass[41] ; SRAM:SRAM_3|dataout[10]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.332      ;
+; 1.324 ; SRAM:SRAM_1|mem_rtl_0_bypass[32] ; SRAM:SRAM_3|dataout[1]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.339      ;
+; 1.325 ; SRAM:SRAM_1|mem_rtl_0_bypass[33] ; SRAM:SRAM_3|dataout[2]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.340      ;
+; 1.352 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[4]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.367      ;
+; 1.353 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[6]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.368      ;
+; 1.356 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[5]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.371      ;
+; 1.356 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[7]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.371      ;
+; 1.365 ; address[4]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[19]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.380      ;
+; 1.405 ; wr                               ; wr                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.420      ;
+; 1.413 ; wr                               ; SRAM:SRAM_2|mem_rtl_0_bypass[10]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.428      ;
+; 1.471 ; SRAM:SRAM_1|mem_rtl_0_bypass[35] ; SRAM:SRAM_3|dataout[4]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.486      ;
+; 1.479 ; SRAM:SRAM_1|mem_rtl_0_bypass[36] ; SRAM:SRAM_3|dataout[5]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.494      ;
+; 1.574 ; SRAM:SRAM_1|mem_rtl_0_bypass[39] ; SRAM:SRAM_3|dataout[8]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.589      ;
+; 1.581 ; datain[6]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[37]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.596      ;
+; 1.602 ; datain[1]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[32]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.617      ;
+; 1.622 ; SRAM:SRAM_3|dataout[1]           ; dataout[1]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.637      ;
+; 1.622 ; SRAM:SRAM_3|dataout[10]          ; dataout[10]~reg0                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.637      ;
+; 1.628 ; SRAM:SRAM_3|dataout[0]           ; dataout[0]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.643      ;
+; 1.630 ; SRAM:SRAM_3|dataout[3]           ; dataout[3]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.645      ;
+; 1.634 ; SRAM:SRAM_3|dataout[2]           ; dataout[2]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.649      ;
+; 1.649 ; datain[5]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[36]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.664      ;
+; 1.668 ; datain[2]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[33]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.683      ;
+; 1.694 ; datain[13]                       ; SRAM:SRAM_1|mem_rtl_0_bypass[44]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.709      ;
+; 1.705 ; address[2]~reg0                  ; SRAM:SRAM_1|mem_rtl_0_bypass[15]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.720      ;
+; 1.803 ; datain[15]                       ; SRAM:SRAM_1|mem_rtl_0_bypass[46]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.818      ;
+; 1.853 ; SRAM:SRAM_3|dataout[6]           ; dataout[6]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.868      ;
+; 1.899 ; SRAM:SRAM_3|dataout[4]           ; dataout[4]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.914      ;
+; 1.906 ; datain[15]                       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg3 ; clk          ; clk         ; 0.000        ; 0.011      ; 1.972      ;
+; 1.911 ; datain[12]                       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg0 ; clk          ; clk         ; 0.000        ; 0.011      ; 1.977      ;
+; 1.916 ; datain[13]                       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg1 ; clk          ; clk         ; 0.000        ; 0.011      ; 1.982      ;
+; 1.924 ; datain[14]                       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg2 ; clk          ; clk         ; 0.000        ; 0.011      ; 1.990      ;
+; 1.927 ; datain[7]                        ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~porta_datain_reg3  ; clk          ; clk         ; 0.000        ; 0.011      ; 1.993      ;
+; 1.928 ; SRAM:SRAM_3|dataout[7]           ; dataout[7]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; -0.059     ; 1.884      ;
+; 1.931 ; SRAM:SRAM_3|dataout[5]           ; dataout[5]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; -0.059     ; 1.887      ;
+; 1.933 ; datain[6]                        ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~porta_datain_reg2  ; clk          ; clk         ; 0.000        ; 0.011      ; 1.999      ;
+; 1.940 ; SRAM:SRAM_3|dataout[9]           ; dataout[9]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.955      ;
+; 1.944 ; SRAM:SRAM_3|dataout[8]           ; dataout[8]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.959      ;
+; 1.945 ; SRAM:SRAM_3|dataout[14]          ; dataout[14]~reg0                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.960      ;
+; 1.946 ; SRAM:SRAM_3|dataout[13]          ; dataout[13]~reg0                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.961      ;
+; 1.949 ; SRAM:SRAM_3|dataout[11]          ; dataout[11]~reg0                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.964      ;
+; 1.960 ; datain[3]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[34]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.975      ;
+; 1.968 ; SRAM:SRAM_1|mem_rtl_0_bypass[31] ; SRAM:SRAM_2|dataout[0]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.983      ;
+; 1.974 ; SRAM:SRAM_3|dataout[15]          ; dataout[15]~reg0                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.989      ;
+; 1.978 ; address[2]~reg0                  ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~porta_address_reg2 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.044      ;
+; 1.992 ; address[3]~reg0                  ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.058      ;
+; 1.995 ; address[7]~reg0                  ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~porta_address_reg7 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.061      ;
+; 1.996 ; address[4]~reg0                  ; address[4]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.011      ;
+; 2.000 ; address[3]~reg0                  ; address[3]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.015      ;
+; 2.003 ; address[1]~reg0                  ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.069      ;
+; 2.003 ; datain[11]                       ; SRAM:SRAM_1|mem_rtl_0_bypass[42]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.018 ; address[5]~reg0                  ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~porta_address_reg5 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.084      ;
+; 2.065 ; datain[14]                       ; SRAM:SRAM_1|mem_rtl_0_bypass[45]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.080      ;
+; 2.066 ; SRAM:SRAM_1|mem_rtl_0_bypass[41] ; SRAM:SRAM_1|dataout[10]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.081      ;
+; 2.071 ; SRAM:SRAM_2|dataout[0]           ; dataout[0]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.086      ;
+; 2.073 ; SRAM:SRAM_2|dataout[1]           ; dataout[1]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.088      ;
+; 2.083 ; SRAM:SRAM_1|dataout[10]          ; dataout[10]~reg0                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.098      ;
+; 2.099 ; SRAM:SRAM_1|mem_rtl_0_bypass[39] ; SRAM:SRAM_1|dataout[8]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.114      ;
+; 2.122 ; SRAM:SRAM_1|mem_rtl_0_bypass[33] ; SRAM:SRAM_2|dataout[2]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.137      ;
+; 2.124 ; SRAM:SRAM_1|mem_rtl_0_bypass[31] ; SRAM:SRAM_3|dataout[0]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.139      ;
+; 2.124 ; SRAM:SRAM_1|mem_rtl_0_bypass[34] ; SRAM:SRAM_3|dataout[3]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.139      ;
+; 2.126 ; SRAM:SRAM_1|mem_rtl_0_bypass[46] ; SRAM:SRAM_3|dataout[15]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.141      ;
+; 2.132 ; SRAM:SRAM_1|mem_rtl_0_bypass[38] ; SRAM:SRAM_3|dataout[7]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.147      ;
+; 2.141 ; SRAM:SRAM_1|mem_rtl_0_bypass[37] ; SRAM:SRAM_3|dataout[6]                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.156      ;
+; 2.148 ; datain[0]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[31]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
+; 2.162 ; address[0]~reg0                  ; address[0]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.177      ;
+; 2.168 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[14]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.183      ;
+; 2.170 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[13]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.185      ;
+; 2.173 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[15]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.188      ;
+; 2.174 ; SRAM:SRAM_3|mem_rtl_0_bypass[10] ; SRAM:SRAM_3|dataout[12]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 2.187 ; datain[4]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[35]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.202      ;
+; 2.209 ; SRAM:SRAM_2|dataout[2]           ; dataout[2]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.224      ;
+; 2.220 ; SRAM:SRAM_1|mem_rtl_0_bypass[45] ; SRAM:SRAM_1|dataout[14]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.235      ;
+; 2.236 ; SRAM:SRAM_1|mem_rtl_0_bypass[46] ; SRAM:SRAM_1|dataout[15]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.251      ;
+; 2.237 ; SRAM:SRAM_2|dataout[3]           ; dataout[3]~reg0                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.252      ;
+; 2.238 ; SRAM:SRAM_1|mem_rtl_0_bypass[44] ; SRAM:SRAM_1|dataout[13]                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.253      ;
+; 2.263 ; datain[0]                        ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg0  ; clk          ; clk         ; 0.000        ; 0.011      ; 2.329      ;
+; 2.263 ; datain[3]                        ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg3  ; clk          ; clk         ; 0.000        ; 0.011      ; 2.329      ;
+; 2.266 ; datain[1]                        ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg1  ; clk          ; clk         ; 0.000        ; 0.011      ; 2.332      ;
+; 2.295 ; address[4]~reg0                  ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a8~porta_address_reg4 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.361      ;
+; 2.304 ; address[11]~reg0                 ; address[11]~reg0                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.319      ;
+; 2.322 ; datain[8]                        ; SRAM:SRAM_1|mem_rtl_0_bypass[39]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.327 ; address[9]~reg0                  ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~porta_address_reg9 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.393      ;
+; 2.330 ; address[8]~reg0                  ; SRAM:SRAM_3|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a4~porta_address_reg8 ; clk          ; clk         ; 0.000        ; 0.011      ; 2.396      ;
+; 2.330 ; datain[10]                       ; SRAM:SRAM_1|mem_rtl_0_bypass[41]                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.345      ;
++-------+----------------------------------+-------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; clk   ; Rise       ; clk                                                                                              ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg4  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg4  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg5  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg5  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg6  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg6  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg7  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg7  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg8  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg8  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg9  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_address_reg9  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg0   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg0   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg1   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg1   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg2   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg2   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg3   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_datain_reg3   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg0   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg0   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg1   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg1   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg2   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg2   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg3   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_memory_reg3   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_we_reg        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~porta_we_reg        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg4  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg4  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg5  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg5  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg6  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg6  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg7  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg7  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg8  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg8  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg9  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a0~portb_address_reg9  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg0 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg0 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg1 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg1 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg2 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg2 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg3 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg3 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg4 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg4 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg5 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg5 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg6 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg6 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg7 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg7 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg8 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg8 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg9 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_address_reg9 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_datain_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg0  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg1  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg2  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_memory_reg3  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_we_reg       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~porta_we_reg       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg0 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg0 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; SRAM:SRAM_1|altsyncram:mem_rtl_0|altsyncram_i9c1:auto_generated|ram_block1a12~portb_address_reg1 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; choose[*]  ; clk        ; 12.675 ; 12.675 ; Rise       ; clk             ;
+;  choose[0] ; clk        ; 12.675 ; 12.675 ; Rise       ; clk             ;
+;  choose[1] ; clk        ; 12.617 ; 12.617 ; Rise       ; clk             ;
+; cin[*]     ; clk        ; 11.785 ; 11.785 ; Rise       ; clk             ;
+;  cin[0]    ; clk        ; 11.166 ; 11.166 ; Rise       ; clk             ;
+;  cin[1]    ; clk        ; 11.785 ; 11.785 ; Rise       ; clk             ;
+;  cin[2]    ; clk        ; 11.169 ; 11.169 ; Rise       ; clk             ;
+;  cin[3]    ; clk        ; 10.454 ; 10.454 ; Rise       ; clk             ;
+;  cin[4]    ; clk        ; 10.760 ; 10.760 ; Rise       ; clk             ;
+;  cin[5]    ; clk        ; 11.145 ; 11.145 ; Rise       ; clk             ;
+;  cin[6]    ; clk        ; 11.361 ; 11.361 ; Rise       ; clk             ;
+;  cin[7]    ; clk        ; 10.784 ; 10.784 ; Rise       ; clk             ;
+;  cin[8]    ; clk        ; 11.051 ; 11.051 ; Rise       ; clk             ;
+;  cin[9]    ; clk        ; 11.257 ; 11.257 ; Rise       ; clk             ;
+;  cin[10]   ; clk        ; 10.552 ; 10.552 ; Rise       ; clk             ;
+;  cin[11]   ; clk        ; 9.585  ; 9.585  ; Rise       ; clk             ;
+;  cin[12]   ; clk        ; 5.203  ; 5.203  ; Rise       ; clk             ;
+;  cin[13]   ; clk        ; 5.522  ; 5.522  ; Rise       ; clk             ;
+;  cin[14]   ; clk        ; 5.195  ; 5.195  ; Rise       ; clk             ;
+;  cin[15]   ; clk        ; 5.063  ; 5.063  ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; choose[*]  ; clk        ; -6.994 ; -6.994 ; Rise       ; clk             ;
+;  choose[0] ; clk        ; -6.994 ; -6.994 ; Rise       ; clk             ;
+;  choose[1] ; clk        ; -7.663 ; -7.663 ; Rise       ; clk             ;
+; cin[*]     ; clk        ; -5.011 ; -5.011 ; Rise       ; clk             ;
+;  cin[0]    ; clk        ; -6.525 ; -6.525 ; Rise       ; clk             ;
+;  cin[1]    ; clk        ; -5.538 ; -5.538 ; Rise       ; clk             ;
+;  cin[2]    ; clk        ; -5.980 ; -5.980 ; Rise       ; clk             ;
+;  cin[3]    ; clk        ; -5.708 ; -5.708 ; Rise       ; clk             ;
+;  cin[4]    ; clk        ; -5.564 ; -5.564 ; Rise       ; clk             ;
+;  cin[5]    ; clk        ; -5.493 ; -5.493 ; Rise       ; clk             ;
+;  cin[6]    ; clk        ; -6.093 ; -6.093 ; Rise       ; clk             ;
+;  cin[7]    ; clk        ; -5.751 ; -5.751 ; Rise       ; clk             ;
+;  cin[8]    ; clk        ; -5.930 ; -5.930 ; Rise       ; clk             ;
+;  cin[9]    ; clk        ; -6.088 ; -6.088 ; Rise       ; clk             ;
+;  cin[10]   ; clk        ; -5.914 ; -5.914 ; Rise       ; clk             ;
+;  cin[11]   ; clk        ; -6.081 ; -6.081 ; Rise       ; clk             ;
+;  cin[12]   ; clk        ; -5.151 ; -5.151 ; Rise       ; clk             ;
+;  cin[13]   ; clk        ; -5.470 ; -5.470 ; Rise       ; clk             ;
+;  cin[14]   ; clk        ; -5.143 ; -5.143 ; Rise       ; clk             ;
+;  cin[15]   ; clk        ; -5.011 ; -5.011 ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; address[*]   ; clk        ; 9.191  ; 9.191  ; Rise       ; clk             ;
+;  address[0]  ; clk        ; 8.552  ; 8.552  ; Rise       ; clk             ;
+;  address[1]  ; clk        ; 8.209  ; 8.209  ; Rise       ; clk             ;
+;  address[2]  ; clk        ; 8.151  ; 8.151  ; Rise       ; clk             ;
+;  address[3]  ; clk        ; 7.843  ; 7.843  ; Rise       ; clk             ;
+;  address[4]  ; clk        ; 7.894  ; 7.894  ; Rise       ; clk             ;
+;  address[5]  ; clk        ; 8.254  ; 8.254  ; Rise       ; clk             ;
+;  address[6]  ; clk        ; 8.242  ; 8.242  ; Rise       ; clk             ;
+;  address[7]  ; clk        ; 8.612  ; 8.612  ; Rise       ; clk             ;
+;  address[8]  ; clk        ; 8.791  ; 8.791  ; Rise       ; clk             ;
+;  address[9]  ; clk        ; 8.231  ; 8.231  ; Rise       ; clk             ;
+;  address[10] ; clk        ; 9.191  ; 9.191  ; Rise       ; clk             ;
+;  address[11] ; clk        ; 8.748  ; 8.748  ; Rise       ; clk             ;
+; clk_out      ; clk        ; 5.444  ; 5.444  ; Rise       ; clk             ;
+; dataout[*]   ; clk        ; 11.171 ; 11.171 ; Rise       ; clk             ;
+;  dataout[0]  ; clk        ; 9.188  ; 9.188  ; Rise       ; clk             ;
+;  dataout[1]  ; clk        ; 9.162  ; 9.162  ; Rise       ; clk             ;
+;  dataout[2]  ; clk        ; 9.200  ; 9.200  ; Rise       ; clk             ;
+;  dataout[3]  ; clk        ; 9.218  ; 9.218  ; Rise       ; clk             ;
+;  dataout[4]  ; clk        ; 9.492  ; 9.492  ; Rise       ; clk             ;
+;  dataout[5]  ; clk        ; 9.552  ; 9.552  ; Rise       ; clk             ;
+;  dataout[6]  ; clk        ; 9.528  ; 9.528  ; Rise       ; clk             ;
+;  dataout[7]  ; clk        ; 9.519  ; 9.519  ; Rise       ; clk             ;
+;  dataout[8]  ; clk        ; 9.570  ; 9.570  ; Rise       ; clk             ;
+;  dataout[9]  ; clk        ; 10.069 ; 10.069 ; Rise       ; clk             ;
+;  dataout[10] ; clk        ; 11.171 ; 11.171 ; Rise       ; clk             ;
+;  dataout[11] ; clk        ; 10.919 ; 10.919 ; Rise       ; clk             ;
+;  dataout[12] ; clk        ; 10.759 ; 10.759 ; Rise       ; clk             ;
+;  dataout[13] ; clk        ; 10.886 ; 10.886 ; Rise       ; clk             ;
+;  dataout[14] ; clk        ; 10.899 ; 10.899 ; Rise       ; clk             ;
+;  dataout[15] ; clk        ; 10.891 ; 10.891 ; Rise       ; clk             ;
+; clk_out      ; clk        ; 5.444  ; 5.444  ; Fall       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; address[*]   ; clk        ; 7.843  ; 7.843  ; Rise       ; clk             ;
+;  address[0]  ; clk        ; 8.552  ; 8.552  ; Rise       ; clk             ;
+;  address[1]  ; clk        ; 8.209  ; 8.209  ; Rise       ; clk             ;
+;  address[2]  ; clk        ; 8.151  ; 8.151  ; Rise       ; clk             ;
+;  address[3]  ; clk        ; 7.843  ; 7.843  ; Rise       ; clk             ;
+;  address[4]  ; clk        ; 7.894  ; 7.894  ; Rise       ; clk             ;
+;  address[5]  ; clk        ; 8.254  ; 8.254  ; Rise       ; clk             ;
+;  address[6]  ; clk        ; 8.242  ; 8.242  ; Rise       ; clk             ;
+;  address[7]  ; clk        ; 8.612  ; 8.612  ; Rise       ; clk             ;
+;  address[8]  ; clk        ; 8.791  ; 8.791  ; Rise       ; clk             ;
+;  address[9]  ; clk        ; 8.231  ; 8.231  ; Rise       ; clk             ;
+;  address[10] ; clk        ; 9.191  ; 9.191  ; Rise       ; clk             ;
+;  address[11] ; clk        ; 8.748  ; 8.748  ; Rise       ; clk             ;
+; clk_out      ; clk        ; 5.444  ; 5.444  ; Rise       ; clk             ;
+; dataout[*]   ; clk        ; 9.162  ; 9.162  ; Rise       ; clk             ;
+;  dataout[0]  ; clk        ; 9.188  ; 9.188  ; Rise       ; clk             ;
+;  dataout[1]  ; clk        ; 9.162  ; 9.162  ; Rise       ; clk             ;
+;  dataout[2]  ; clk        ; 9.200  ; 9.200  ; Rise       ; clk             ;
+;  dataout[3]  ; clk        ; 9.218  ; 9.218  ; Rise       ; clk             ;
+;  dataout[4]  ; clk        ; 9.492  ; 9.492  ; Rise       ; clk             ;
+;  dataout[5]  ; clk        ; 9.552  ; 9.552  ; Rise       ; clk             ;
+;  dataout[6]  ; clk        ; 9.528  ; 9.528  ; Rise       ; clk             ;
+;  dataout[7]  ; clk        ; 9.519  ; 9.519  ; Rise       ; clk             ;
+;  dataout[8]  ; clk        ; 9.570  ; 9.570  ; Rise       ; clk             ;
+;  dataout[9]  ; clk        ; 10.069 ; 10.069 ; Rise       ; clk             ;
+;  dataout[10] ; clk        ; 11.171 ; 11.171 ; Rise       ; clk             ;
+;  dataout[11] ; clk        ; 10.919 ; 10.919 ; Rise       ; clk             ;
+;  dataout[12] ; clk        ; 10.759 ; 10.759 ; Rise       ; clk             ;
+;  dataout[13] ; clk        ; 10.886 ; 10.886 ; Rise       ; clk             ;
+;  dataout[14] ; clk        ; 10.899 ; 10.899 ; Rise       ; clk             ;
+;  dataout[15] ; clk        ; 10.891 ; 10.891 ; Rise       ; clk             ;
+; clk_out      ; clk        ; 5.444  ; 5.444  ; Fall       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 4948     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 4948     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 19    ; 19   ;
+; Unconstrained Input Port Paths  ; 1307  ; 1307 ;
+; Unconstrained Output Ports      ; 29    ; 29   ;
+; Unconstrained Output Port Paths ; 29    ; 29   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Nov 27 15:19:58 2018
+Info: Command: quartus_sta RAM -c RAM
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RAM.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.381
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.381     -1705.780 clk 
+Info (332146): Worst-case hold slack is 0.854
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.854         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.583
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.583     -1248.411 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4584 megabytes
+    Info: Processing ended: Tue Nov 27 15:20:00 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
