@@ -1,0 +1,59 @@
+module RAM(clk,choose,address,datain,wr,dataout); 
+input clk,wr;
+input [1:0]choose;
+input[11:0]address; 
+input[15:0]datain;
+output[15:0]dataout;
+wire[15:0]dainout1; 
+wire[15:0]dainout2;  
+wire[15:0]dainout3; 
+reg[11:0]address;
+reg[15:0]datain;  
+reg[15:0]dataout;
+reg[2:0]e;  
+initial address=0;
+initial data=0;
+always@(posedge clk)
+begin
+if(choose==2'b00) address=address+1;
+if(choose==2'b01) datain=datain+1;
+if(choose==2'b00||choose==2'b01)
+begin
+case(address[11:10])  
+2'b00: begin  e=3'b001;
+dataout=dainout1;end
+			
+2'b01: begin  e=3'b010; 
+dataout=dainout2; end
+			
+2'b10: begin  e=3'b100;   
+ dataout=dainout3;end
+endcase
+end
+end
+
+
+always@(posedge clk)
+begin   
+if(choose==2'b10)
+begin
+address=address+1;
+case(address[11:10])  
+2'b00: begin  e=3'b001;
+dataout=dainout1;end
+			
+2'b01: begin  e=3'b010; 
+dataout=dainout2; end
+			
+2'b10: begin  e=3'b100;   
+ dataout=dainout3;end
+endcase 
+end                                                  
+end
+
+sram sram_1(clk,address[9:0],datain,dainout1,e[0],wr); 
+sram sram_2(clk,address[9:0],datain,dainout2,e[1],wr);
+sram sram_3(clk,address[9:0],datain,dainout3,e[2],wr); 
+
+
+endmodule
