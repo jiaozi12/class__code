@@ -1,0 +1,100 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+# Date created = 23:46:13  October 14, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Alu16_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name DEVICE EP1C12Q240C8
+set_global_assignment -name TOP_LEVEL_ENTITY Alu16
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:46:13  OCTOBER 14, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 240
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VERILOG_FILE Alu16.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_location_assignment PIN_160 -to C
+set_location_assignment PIN_136 -to F[15]
+set_location_assignment PIN_135 -to F[14]
+set_location_assignment PIN_134 -to F[13]
+set_location_assignment PIN_133 -to F[12]
+set_location_assignment PIN_132 -to F[11]
+set_location_assignment PIN_128 -to F[10]
+set_location_assignment PIN_41 -to F[9]
+set_location_assignment PIN_21 -to F[8]
+set_location_assignment PIN_20 -to F[7]
+set_location_assignment PIN_19 -to F[6]
+set_location_assignment PIN_18 -to F[5]
+set_location_assignment PIN_17 -to F[4]
+set_location_assignment PIN_16 -to F[3]
+set_location_assignment PIN_15 -to F[2]
+set_location_assignment PIN_14 -to F[1]
+set_location_assignment PIN_13 -to F[0]
+set_location_assignment PIN_173 -to M[1]
+set_location_assignment PIN_169 -to M[0]
+set_location_assignment PIN_158 -to N
+set_location_assignment PIN_141 -to OV
+set_location_assignment PIN_12 -to T[15]
+set_location_assignment PIN_8 -to T[14]
+set_location_assignment PIN_7 -to T[13]
+set_location_assignment PIN_6 -to T[12]
+set_location_assignment PIN_4 -to T[11]
+set_location_assignment PIN_3 -to T[10]
+set_location_assignment PIN_2 -to T[9]
+set_location_assignment PIN_1 -to T[8]
+set_location_assignment PIN_240 -to T[7]
+set_location_assignment PIN_239 -to T[6]
+set_location_assignment PIN_238 -to T[5]
+set_location_assignment PIN_237 -to T[4]
+set_location_assignment PIN_236 -to T[3]
+set_location_assignment PIN_235 -to T[2]
+set_location_assignment PIN_234 -to T[1]
+set_location_assignment PIN_233 -to T[0]
+set_location_assignment PIN_159 -to Z
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Administrator/Desktop/Project/Alu16/Waveform.vwf"
