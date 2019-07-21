@@ -1,0 +1,28 @@
+module LOVEYOU(clk,DATAOUT);
+input clk;
+output [31:0]DATAOUT;
+reg [10:0]address;
+reg [31:0]DATAOUT;
+initial address = 11'b00000000000;
+integer i = 0;
+reg add;
+initial add = 1'b0;
+reg [15:0]dataout1;
+reg [15:0]dataout2;
+wire [15:0]dataout;
+always @ (posedge clk)
+begin
+	address[10:0]=i;
+	i=(i+1)%6;
+	if(i%2==0)dataout1<=dataout;
+	else dataout2<=dataout;
+end
+always @ (posedge clk)
+begin
+   add=!add;
+	if(add) begin DATAOUT[31:16]<=dataout2;DATAOUT[15:0]<=dataout1;end
+end
+
+ROM ROM_1(clk,address,dataout,1'b1);
+
+endmodule

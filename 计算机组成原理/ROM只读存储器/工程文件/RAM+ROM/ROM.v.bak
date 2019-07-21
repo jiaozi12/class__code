@@ -1,0 +1,50 @@
+module ROM(clk,address,data_out,cs_rom);
+input clk,cs_rom;
+input[10:0]address;//2K*16位
+output[15:0]data_out;
+reg[10:0]addr;
+reg[15:0]data_out,data_in;
+wire[15:0]data_out_with_wire1,data_out_with_wire2;
+reg cs_sram,wr_sram;
+initial cs_sram=0;
+initial addr=0;
+	
+always@(*)
+begin
+if(addr==11'b00000000000) begin wr_sram=0;data_in=16'b00_0000110_1001111;addr=addr+1;end  //13
+else if(addr==11'b00000000001) begin wr_sram=0;data_in=16'b00_0000110_1100110;addr=addr+1;end  //14
+else if(addr==11'b00000000010) begin wr_sram=0;data_in=16'b00_0111000_0111111;addr=addr+1;end  //LO
+else if(addr==11'b00000000011) begin wr_sram=0;data_in=16'b00_0111110_1111001;addr=addr+1;end  //VE
+else if(addr==11'b00000000100) begin wr_sram=0;data_in=16'b00_0000000_1101110;addr=addr+1;end  //_Y
+else if(addr==11'b00000000101) begin wr_sram=0;data_in=16'b00_0111111_0111110;addr=addr+1;end  //OU
+else begin wr_sram=1;addr=11'b10000000000;end
+end
+	
+always@(*)
+begin
+if(addr==11'b10000000000) begin wr_sram=0;data_in=16'b00_0000110_1001111;addr=addr+1;end  //13
+else if(addr==11'b10000000001) begin wr_sram=0;data_in=16'b00_0000110_1100110;addr=addr+1;end  //14
+else if(addr==11'b10000000010) begin wr_sram=0;data_in=16'b00_0111000_0111111;addr=addr+1;end  //LO
+else if(addr==11'b10000000011) begin wr_sram=0;data_in=16'b00_0111110_1111001;addr=addr+1;end  //VE
+else if(addr==11'b10000000100) begin wr_sram=0;data_in=16'b00_0000000_1101110;addr=addr+1;end  //_Y
+else if(addr==11'b10000000101) begin wr_sram=0;data_in=16'b00_0111111_0111110;addr=addr+1;end  //OU
+else begin wr_sram=1;addr=11'b10000000000;end
+end
+	
+always@(posedge clk)
+begin
+
+if(cs_rom)
+begin
+cs_sram=address[10];
+if(!cs_sram) begin data_out=data_out_with_wire1;end
+if(cs_sram) begin data_out=data_out_with_wire2;end
+
+end
+end
+
+SROM SROM_1(clk,data_in[15:8],data_out_with_wire1[15:8],address[9:0],wr_sram,!cs_sram);//cs_sram为0时选中第一个芯片组
+SROM SROM_2(clk,data_in[7:0],data_out_with_wire1[7:0],address[9:0],wr_sram,!cs_sram);
+SROM SROM_3(clk,data_in[15:8],data_out_with_wire2[15:8],address[9:0],wr_sram,cs_sram);//cs_sram为1时选中第二个芯片组
+SROM SROM_4(clk,data_in[7:0],data_out_with_wire2[7:0],address[9:0],wr_sram,cs_sram);
+endmodule
