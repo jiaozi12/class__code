@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at Instruction_system.v(7): object "c" differs only in case from object "C" in the same scope
+Info (10281): Verilog HDL Declaration information at Instruction_system.v(7): object "z" differs only in case from object "Z" in the same scope
+Info (10281): Verilog HDL Declaration information at Instruction_system.v(7): object "n" differs only in case from object "N" in the same scope
+Info (10281): Verilog HDL Declaration information at Instruction_system.v(7): object "ov" differs only in case from object "OV" in the same scope

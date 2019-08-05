@@ -1,0 +1,12 @@
+Fitter Status : Successful - Sun Dec 16 17:24:28 2018
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : Instruction_system
+Top-level Entity Name : Instruction_system
+Family : Cyclone
+Device : EP1C12Q240C8
+Timing Models : Final
+Total logic elements : 534 / 12,060 ( 4 % )
+Total pins : 42 / 173 ( 24 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
