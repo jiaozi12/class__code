@@ -1,0 +1,29 @@
+# do CPU.do 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module CPU
+# 
+# Top level modules:
+# 	CPU
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module CPU_vlg_sample_tst
+# -- Compiling module CPU_vlg_check_tst
+# -- Compiling module CPU_vlg_vec_tst
+# 
+# Top level modules:
+# 	CPU_vlg_vec_tst
+# vsim -L cyclone_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.CPU_vlg_vec_tst 
+# Loading work.CPU_vlg_vec_tst
+# Loading work.CPU
+# Loading cyclone_ver.cyclone_io
+# Loading cyclone_ver.cyclone_mux21
+# Loading cyclone_ver.cyclone_dffe
+# Loading cyclone_ver.cyclone_asynch_io
+# Loading cyclone_ver.cyclone_lcell
+# Loading cyclone_ver.cyclone_asynch_lcell
+# Loading cyclone_ver.cyclone_lcell_register
+# Loading work.CPU_vlg_sample_tst
+# Loading work.CPU_vlg_check_tst
+# Loading cyclone_ver.CYCLONE_PRIM_DFFE
+# Simulation passed !
+# ** Note: $finish    : CPU.vt(679)
+#    Time: 1 us  Iteration: 0  Instance: /CPU_vlg_vec_tst/tb_out
