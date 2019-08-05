@@ -1,0 +1,11 @@
+module SROM2(clk,address,data_out,cs);
+	input clk,cs;
+	input [9:0]address;
+	output [7:0]data_out;
+	reg [7:0]data_out;
+	wire [7:0]data[(1<<10)-1:0];
+	assign data[10'b00_0000_0001]=8'b0001_0000;//0001表示a+b
+	assign data[]
+	always@(posedge clk)
+			
+endmodule

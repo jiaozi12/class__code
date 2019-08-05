@@ -1,0 +1,26 @@
+module register(clk,address,data_in,data_out,wr,cs);
+input [3:0]address;
+input [15:0]data_in;
+input clk,wr,cs;
+output [15:0]data_out;
+reg [15:0]data_out
+reg [15:0] mem [(1<<4)-1:0];
+//通用寄存器，用于存放a+b和a-b的数据
+initial
+begin
+	mem[4'b0000] = 4'h8011;		
+	mem[4'b0001] = 4'h8022;		
+	mem[4'b0010] = 4'h8123;	
+	mem[4'b0011] = 4'h1124;
+end
+
+always@(posedge clk)
+	begin
+		if(cs)
+			begin
+				if(wr) begin mem[address]=data_in;end
+				if(!wr) begin data_out=mem[address];end
+			end
+	end
+
+endmodule 

@@ -1,0 +1,24 @@
+<internal_error>
+	<executable>quartus_sim.exe</executable>
+	<sub_system>MEM</sub_system>
+	<error>*** Fatal Error: Out of memory in module quartus_sim.exe (2090 megabytes used)</error>
+	<date>Mon Dec 10 16:01:52 2018</date>
+	<version>Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version</version>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_sim.exe</executable>
+	<sub_system>MEM</sub_system>
+	<error>*** Fatal Error: Out of memory in module quartus_sim.exe (2095 megabytes used)</error>
+	<date>Mon Dec 10 16:10:13 2018</date>
+	<version>Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version</version>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_sim.exe</executable>
+	<sub_system>MEM</sub_system>
+	<error>*** Fatal Error: Out of memory in module quartus_sim.exe (2095 megabytes used)</error>
+	<date>Mon Dec 10 16:15:40 2018</date>
+	<version>Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version</version>
+</internal_error>
+
