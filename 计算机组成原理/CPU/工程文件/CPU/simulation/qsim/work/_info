@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\qiqi\Desktop\CPU\simulation\qsim
+vCPU
+Z1 IB5@0ojLWk_J[YfDDlLeGE0
+Z2 V1SFAkgE`3aEAWH@^zSfT41
+Z3 dC:\Users\qiqi\Desktop\CPU\simulation\qsim
+Z4 w1545144605
+Z5 8CPU.vo
+Z6 FCPU.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@c@p@u
+!i10b 1
+Z10 !s100 ]gIVf_`9[h`B<l>3K@<:U2
+!s85 0
+Z11 !s108 1545144610.210000
+Z12 !s107 CPU.vo|
+Z13 !s90 -work|work|CPU.vo|
+!s101 -O0
+vCPU_vlg_check_tst
+!i10b 1
+!s100 @^@C^<0a:oQKVgg7CNABI0
+Iei=H@SBB2YgKG77F3ECBz2
+V1?8O=GBn@ioic__bKM20]0
+R3
+Z14 w1545144603
+Z15 8CPU.vt
+Z16 FCPU.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z17 !s108 1545144611.112000
+Z18 !s107 CPU.vt|
+Z19 !s90 -work|work|CPU.vt|
+!s101 -O0
+R8
+n@c@p@u_vlg_check_tst
+vCPU_vlg_sample_tst
+!i10b 1
+!s100 ]nINR2RmkCYGBKizKWjFO0
+I0?_?hT?kUb;6@i?G1aln[2
+Vf:SARgV1mSjni9Gh5D@Cm3
+R3
+R14
+R15
+R16
+L0 29
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@c@p@u_vlg_sample_tst
+vCPU_vlg_vec_tst
+!i10b 1
+!s100 :TA2AVARI]cRddZ0LaWzD0
+I>g1ne?Fhc8M=^V[@YST?U3
+VJGhMb3eOK0GJGjGadCX2W1
+R3
+R14
+R15
+R16
+L0 683
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@c@p@u_vlg_vec_tst
