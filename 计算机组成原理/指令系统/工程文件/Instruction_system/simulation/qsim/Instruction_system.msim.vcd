@@ -1,0 +1,728 @@
+$comment
+	File created using the following command:
+		vcd file Instruction_system.msim.vcd -direction
+$end
+$date
+	Sun Dec 16 09:58:21 2018
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Instruction_system_vlg_vec_tst $end
+$var reg 12 ! addr [11:0] $end
+$var reg 1 " choose $end
+$var wire 1 # inst [47] $end
+$var wire 1 $ inst [46] $end
+$var wire 1 % inst [45] $end
+$var wire 1 & inst [44] $end
+$var wire 1 ' inst [43] $end
+$var wire 1 ( inst [42] $end
+$var wire 1 ) inst [41] $end
+$var wire 1 * inst [40] $end
+$var wire 1 + inst [39] $end
+$var wire 1 , inst [38] $end
+$var wire 1 - inst [37] $end
+$var wire 1 . inst [36] $end
+$var wire 1 / inst [35] $end
+$var wire 1 0 inst [34] $end
+$var wire 1 1 inst [33] $end
+$var wire 1 2 inst [32] $end
+$var wire 1 3 inst [31] $end
+$var wire 1 4 inst [30] $end
+$var wire 1 5 inst [29] $end
+$var wire 1 6 inst [28] $end
+$var wire 1 7 inst [27] $end
+$var wire 1 8 inst [26] $end
+$var wire 1 9 inst [25] $end
+$var wire 1 : inst [24] $end
+$var wire 1 ; inst [23] $end
+$var wire 1 < inst [22] $end
+$var wire 1 = inst [21] $end
+$var wire 1 > inst [20] $end
+$var wire 1 ? inst [19] $end
+$var wire 1 @ inst [18] $end
+$var wire 1 A inst [17] $end
+$var wire 1 B inst [16] $end
+$var wire 1 C inst [15] $end
+$var wire 1 D inst [14] $end
+$var wire 1 E inst [13] $end
+$var wire 1 F inst [12] $end
+$var wire 1 G inst [11] $end
+$var wire 1 H inst [10] $end
+$var wire 1 I inst [9] $end
+$var wire 1 J inst [8] $end
+$var wire 1 K inst [7] $end
+$var wire 1 L inst [6] $end
+$var wire 1 M inst [5] $end
+$var wire 1 N inst [4] $end
+$var wire 1 O inst [3] $end
+$var wire 1 P inst [2] $end
+$var wire 1 Q inst [1] $end
+$var wire 1 R inst [0] $end
+$var wire 1 S result [15] $end
+$var wire 1 T result [14] $end
+$var wire 1 U result [13] $end
+$var wire 1 V result [12] $end
+$var wire 1 W result [11] $end
+$var wire 1 X result [10] $end
+$var wire 1 Y result [9] $end
+$var wire 1 Z result [8] $end
+$var wire 1 [ result [7] $end
+$var wire 1 \ result [6] $end
+$var wire 1 ] result [5] $end
+$var wire 1 ^ result [4] $end
+$var wire 1 _ result [3] $end
+$var wire 1 ` result [2] $end
+$var wire 1 a result [1] $end
+$var wire 1 b result [0] $end
+$var wire 1 c sampler $end
+$scope module i1 $end
+$var wire 1 d gnd $end
+$var wire 1 e vcc $end
+$var wire 1 f unknown $end
+$var tri1 1 g devclrn $end
+$var tri1 1 h devpor $end
+$var tri1 1 i devoe $end
+$var wire 1 j choose~combout $end
+$var wire 1 k Add1~12 $end
+$var wire 1 l Add1~12COUT1_42 $end
+$var wire 1 m Add1~17 $end
+$var wire 1 n Add1~17COUT1_44 $end
+$var wire 1 o Add1~22 $end
+$var wire 1 p Add1~22COUT1_46 $end
+$var wire 1 q Add1~27 $end
+$var wire 1 r Add1~32 $end
+$var wire 1 s Add1~32COUT1_48 $end
+$var wire 1 t Add1~5_combout $end
+$var wire 1 u Add1~25_combout $end
+$var wire 1 v Add1~20_combout $end
+$var wire 1 w Add1~15_combout $end
+$var wire 1 x Add1~10_combout $end
+$var wire 1 y address[1]~5 $end
+$var wire 1 z address[1]~5COUT1_22 $end
+$var wire 1 { address[2]~7 $end
+$var wire 1 | address[2]~7COUT1_24 $end
+$var wire 1 } address[3]~9 $end
+$var wire 1 ~ address[3]~9COUT1_26 $end
+$var wire 1 !! address[4]~11 $end
+$var wire 1 "! Add1~30_combout $end
+$var wire 1 #! address[5]~13 $end
+$var wire 1 $! address[5]~13COUT1_28 $end
+$var wire 1 %! Add1~7 $end
+$var wire 1 &! Add1~7COUT1_50 $end
+$var wire 1 '! Add1~0_combout $end
+$var wire 1 (! address[6]~3 $end
+$var wire 1 )! address[6]~3COUT1_30 $end
+$var wire 1 *! ROM_RAM_1|decoder|Decoder0~0_combout $end
+$var wire 1 +! ROM_RAM_1|SRAM_1|mem~22_combout $end
+$var wire 1 ,! ROM_RAM_1|SRAM_1|mem~37_combout $end
+$var wire 1 -! ROM_RAM_1|decoder|Decoder0~3_combout $end
+$var wire 1 .! ROM_RAM_1|decoder|Decoder0~2_combout $end
+$var wire 1 /! ROM_RAM_1|SRAM_1|mem~23_combout $end
+$var wire 1 0! ROM_RAM_1|SROM_2|Mux7~3_combout $end
+$var wire 1 1! ROM_RAM_1|SROM_2|Mux7~1_combout $end
+$var wire 1 2! ROM_RAM_1|SRAM_1|mem~24_combout $end
+$var wire 1 3! ROM_RAM_1|SROM_2|Mux7~2_combout $end
+$var wire 1 4! ROM_RAM_1|SROM_1|Mux4~0_combout $end
+$var wire 1 5! ROM_RAM_1|SROM_2|Mux7~0_combout $end
+$var wire 1 6! ROM_RAM_1|SROM_2|Mux7~4_combout $end
+$var wire 1 7! ROM_RAM_1|decoder|Decoder0~1_combout $end
+$var wire 1 8! ROM_RAM_1|Mux0~0_combout $end
+$var wire 1 9! inst[0]~reg0_regout $end
+$var wire 1 :! ROM_RAM_1|SRAM_1|mem~25_combout $end
+$var wire 1 ;! ROM_RAM_1|SRAM_1|mem~38_combout $end
+$var wire 1 <! ROM_RAM_1|SROM_2|Mux6~1_combout $end
+$var wire 1 =! ROM_RAM_1|SROM_2|Mux6~0_combout $end
+$var wire 1 >! ROM_RAM_1|SROM_1|Mux4~1_combout $end
+$var wire 1 ?! ROM_RAM_1|SROM_2|Mux6~2_combout $end
+$var wire 1 @! ROM_RAM_1|Mux1~0_combout $end
+$var wire 1 A! inst[1]~reg0_regout $end
+$var wire 1 B! ROM_RAM_1|SRAM_1|mem~26_combout $end
+$var wire 1 C! ROM_RAM_1|SRAM_1|mem~39_combout $end
+$var wire 1 D! ROM_RAM_1|SROM_2|Mux5~1_combout $end
+$var wire 1 E! ROM_RAM_1|SROM_2|Mux5~0_combout $end
+$var wire 1 F! ROM_RAM_1|SROM_2|Mux5~2_combout $end
+$var wire 1 G! ROM_RAM_1|Mux2~0_combout $end
+$var wire 1 H! inst[2]~reg0_regout $end
+$var wire 1 I! ROM_RAM_1|SRAM_1|mem~27_combout $end
+$var wire 1 J! ROM_RAM_1|SROM_2|Mux1~7_combout $end
+$var wire 1 K! ROM_RAM_1|SROM_2|Mux4~2_combout $end
+$var wire 1 L! ROM_RAM_1|SROM_2|Mux4~3_combout $end
+$var wire 1 M! ROM_RAM_1|Mux3~0_combout $end
+$var wire 1 N! inst[3]~reg0_regout $end
+$var wire 1 O! ROM_RAM_1|SRAM_1|mem~28_combout $end
+$var wire 1 P! ROM_RAM_1|SRAM_1|mem~40_combout $end
+$var wire 1 Q! ROM_RAM_1|SROM_2|Mux3~1_combout $end
+$var wire 1 R! ROM_RAM_1|SROM_2|Mux3~0_combout $end
+$var wire 1 S! ROM_RAM_1|SROM_2|Mux3~2_combout $end
+$var wire 1 T! ROM_RAM_1|SROM_2|Mux3~3_combout $end
+$var wire 1 U! ROM_RAM_1|Mux4~0_combout $end
+$var wire 1 V! inst[4]~reg0_regout $end
+$var wire 1 W! ROM_RAM_1|SRAM_1|mem~29_combout $end
+$var wire 1 X! ROM_RAM_1|SRAM_1|mem~41_combout $end
+$var wire 1 Y! ROM_RAM_1|SROM_2|Mux2~0_combout $end
+$var wire 1 Z! ROM_RAM_1|SROM_2|Mux2~1_combout $end
+$var wire 1 [! ROM_RAM_1|Mux5~0_combout $end
+$var wire 1 \! inst[5]~reg0_regout $end
+$var wire 1 ]! ROM_RAM_1|SRAM_1|mem~30_combout $end
+$var wire 1 ^! ROM_RAM_1|SRAM_1|mem~42_combout $end
+$var wire 1 _! ROM_RAM_1|SROM_2|Mux1~4_combout $end
+$var wire 1 `! ROM_RAM_1|SROM_2|Mux1~5_combout $end
+$var wire 1 a! ROM_RAM_1|SROM_2|Mux1~6_combout $end
+$var wire 1 b! ROM_RAM_1|Mux6~0_combout $end
+$var wire 1 c! inst[6]~reg0_regout $end
+$var wire 1 d! ROM_RAM_1|SROM_2|Mux0~2_combout $end
+$var wire 1 e! ROM_RAM_1|SROM_2|Mux0~3_combout $end
+$var wire 1 f! ROM_RAM_1|Mux7~0_combout $end
+$var wire 1 g! inst[7]~reg0_regout $end
+$var wire 1 h! ROM_RAM_1|SRAM_1|mem~31_combout $end
+$var wire 1 i! ROM_RAM_1|SRAM_1|mem~43_combout $end
+$var wire 1 j! ROM_RAM_1|Mux8~0_combout $end
+$var wire 1 k! inst[8]~reg0_regout $end
+$var wire 1 l! ROM_RAM_1|SRAM_1|mem~32_combout $end
+$var wire 1 m! ROM_RAM_1|SRAM_1|mem~44_combout $end
+$var wire 1 n! ROM_RAM_1|Mux9~0_combout $end
+$var wire 1 o! inst[9]~reg0_regout $end
+$var wire 1 p! ROM_RAM_1|SRAM_1|mem~33_combout $end
+$var wire 1 q! ROM_RAM_1|SRAM_1|mem~45_combout $end
+$var wire 1 r! ROM_RAM_1|Mux10~0_combout $end
+$var wire 1 s! inst[10]~reg0_regout $end
+$var wire 1 t! ROM_RAM_1|SRAM_1|mem~34_combout $end
+$var wire 1 u! ROM_RAM_1|SRAM_1|mem~46_combout $end
+$var wire 1 v! ROM_RAM_1|SROM_1|Mux4~2_combout $end
+$var wire 1 w! ROM_RAM_1|Mux11~0_combout $end
+$var wire 1 x! inst[11]~reg0_regout $end
+$var wire 1 y! ROM_RAM_1|SRAM_1|mem~35_combout $end
+$var wire 1 z! ROM_RAM_1|SRAM_1|mem~47_combout $end
+$var wire 1 {! ROM_RAM_1|Mux12~0_combout $end
+$var wire 1 |! inst[12]~reg0_regout $end
+$var wire 1 }! ROM_RAM_1|SROM_1|Mux2~0_combout $end
+$var wire 1 ~! ROM_RAM_1|Mux13~0_combout $end
+$var wire 1 !" inst[13]~reg0_regout $end
+$var wire 1 "" ROM_RAM_1|SRAM_1|mem~36_combout $end
+$var wire 1 #" ROM_RAM_1|SROM_1|Mux1~1_combout $end
+$var wire 1 $" ROM_RAM_1|SROM_1|Mux1~0_combout $end
+$var wire 1 %" ROM_RAM_1|SROM_1|Mux1~2_combout $end
+$var wire 1 &" ROM_RAM_1|SROM_1|Mux1~3_combout $end
+$var wire 1 '" ROM_RAM_1|Mux14~0_combout $end
+$var wire 1 (" inst[14]~reg0_regout $end
+$var wire 1 )" ROM_RAM_1|SROM_1|Mux0~2_combout $end
+$var wire 1 *" ROM_RAM_1|SROM_1|Mux0~3_combout $end
+$var wire 1 +" inst[15]~reg0_regout $end
+$var wire 1 ," ROM_RAM_1|Mux0~1 $end
+$var wire 1 -" inst[16]~reg0_regout $end
+$var wire 1 ." ROM_RAM_1|Mux1~1 $end
+$var wire 1 /" inst[17]~reg0_regout $end
+$var wire 1 0" ROM_RAM_1|Mux2~1 $end
+$var wire 1 1" inst[18]~reg0_regout $end
+$var wire 1 2" ROM_RAM_1|Mux3~1 $end
+$var wire 1 3" inst[19]~reg0_regout $end
+$var wire 1 4" ROM_RAM_1|Mux4~1 $end
+$var wire 1 5" inst[20]~reg0_regout $end
+$var wire 1 6" ROM_RAM_1|Mux5~1 $end
+$var wire 1 7" inst[21]~reg0_regout $end
+$var wire 1 8" ROM_RAM_1|Mux6~1 $end
+$var wire 1 9" inst[22]~reg0_regout $end
+$var wire 1 :" ROM_RAM_1|Mux7~1 $end
+$var wire 1 ;" inst[23]~reg0_regout $end
+$var wire 1 <" ROM_RAM_1|Mux8~1 $end
+$var wire 1 =" inst[24]~reg0_regout $end
+$var wire 1 >" ROM_RAM_1|Mux9~1 $end
+$var wire 1 ?" inst[25]~reg0_regout $end
+$var wire 1 @" ROM_RAM_1|Mux10~1 $end
+$var wire 1 A" inst[26]~reg0_regout $end
+$var wire 1 B" ROM_RAM_1|Mux11~1 $end
+$var wire 1 C" inst[27]~reg0_regout $end
+$var wire 1 D" ROM_RAM_1|Mux12~1 $end
+$var wire 1 E" inst[28]~reg0_regout $end
+$var wire 1 F" ROM_RAM_1|Mux13~1 $end
+$var wire 1 G" inst[29]~reg0_regout $end
+$var wire 1 H" ROM_RAM_1|Mux14~1 $end
+$var wire 1 I" inst[30]~reg0_regout $end
+$var wire 1 J" ROM_RAM_1|Mux15~0 $end
+$var wire 1 K" inst[31]~reg0_regout $end
+$var wire 1 L" inst[32]~reg0_regout $end
+$var wire 1 M" inst[33]~reg0_regout $end
+$var wire 1 N" inst[34]~reg0_regout $end
+$var wire 1 O" inst[35]~reg0_regout $end
+$var wire 1 P" inst[36]~reg0_regout $end
+$var wire 1 Q" inst[37]~reg0_regout $end
+$var wire 1 R" inst[38]~reg0_regout $end
+$var wire 1 S" inst[39]~reg0_regout $end
+$var wire 1 T" inst[40]~reg0_regout $end
+$var wire 1 U" inst[41]~reg0_regout $end
+$var wire 1 V" inst[42]~reg0_regout $end
+$var wire 1 W" inst[43]~reg0_regout $end
+$var wire 1 X" inst[44]~reg0_regout $end
+$var wire 1 Y" inst[45]~reg0_regout $end
+$var wire 1 Z" inst[46]~reg0_regout $end
+$var wire 1 [" inst[47]~reg0_regout $end
+$var wire 1 \" ROM_RAM_1|SRAM_2|dataout [15] $end
+$var wire 1 ]" ROM_RAM_1|SRAM_2|dataout [14] $end
+$var wire 1 ^" ROM_RAM_1|SRAM_2|dataout [13] $end
+$var wire 1 _" ROM_RAM_1|SRAM_2|dataout [12] $end
+$var wire 1 `" ROM_RAM_1|SRAM_2|dataout [11] $end
+$var wire 1 a" ROM_RAM_1|SRAM_2|dataout [10] $end
+$var wire 1 b" ROM_RAM_1|SRAM_2|dataout [9] $end
+$var wire 1 c" ROM_RAM_1|SRAM_2|dataout [8] $end
+$var wire 1 d" ROM_RAM_1|SRAM_2|dataout [7] $end
+$var wire 1 e" ROM_RAM_1|SRAM_2|dataout [6] $end
+$var wire 1 f" ROM_RAM_1|SRAM_2|dataout [5] $end
+$var wire 1 g" ROM_RAM_1|SRAM_2|dataout [4] $end
+$var wire 1 h" ROM_RAM_1|SRAM_2|dataout [3] $end
+$var wire 1 i" ROM_RAM_1|SRAM_2|dataout [2] $end
+$var wire 1 j" ROM_RAM_1|SRAM_2|dataout [1] $end
+$var wire 1 k" ROM_RAM_1|SRAM_2|dataout [0] $end
+$var wire 1 l" ROM_RAM_1|SRAM_3|dataout [15] $end
+$var wire 1 m" ROM_RAM_1|SRAM_3|dataout [14] $end
+$var wire 1 n" ROM_RAM_1|SRAM_3|dataout [13] $end
+$var wire 1 o" ROM_RAM_1|SRAM_3|dataout [12] $end
+$var wire 1 p" ROM_RAM_1|SRAM_3|dataout [11] $end
+$var wire 1 q" ROM_RAM_1|SRAM_3|dataout [10] $end
+$var wire 1 r" ROM_RAM_1|SRAM_3|dataout [9] $end
+$var wire 1 s" ROM_RAM_1|SRAM_3|dataout [8] $end
+$var wire 1 t" ROM_RAM_1|SRAM_3|dataout [7] $end
+$var wire 1 u" ROM_RAM_1|SRAM_3|dataout [6] $end
+$var wire 1 v" ROM_RAM_1|SRAM_3|dataout [5] $end
+$var wire 1 w" ROM_RAM_1|SRAM_3|dataout [4] $end
+$var wire 1 x" ROM_RAM_1|SRAM_3|dataout [3] $end
+$var wire 1 y" ROM_RAM_1|SRAM_3|dataout [2] $end
+$var wire 1 z" ROM_RAM_1|SRAM_3|dataout [1] $end
+$var wire 1 {" ROM_RAM_1|SRAM_3|dataout [0] $end
+$var wire 1 |" ROM_RAM_1|SRAM_1|dataout [15] $end
+$var wire 1 }" ROM_RAM_1|SRAM_1|dataout [14] $end
+$var wire 1 ~" ROM_RAM_1|SRAM_1|dataout [13] $end
+$var wire 1 !# ROM_RAM_1|SRAM_1|dataout [12] $end
+$var wire 1 "# ROM_RAM_1|SRAM_1|dataout [11] $end
+$var wire 1 ## ROM_RAM_1|SRAM_1|dataout [10] $end
+$var wire 1 $# ROM_RAM_1|SRAM_1|dataout [9] $end
+$var wire 1 %# ROM_RAM_1|SRAM_1|dataout [8] $end
+$var wire 1 &# ROM_RAM_1|SRAM_1|dataout [7] $end
+$var wire 1 '# ROM_RAM_1|SRAM_1|dataout [6] $end
+$var wire 1 (# ROM_RAM_1|SRAM_1|dataout [5] $end
+$var wire 1 )# ROM_RAM_1|SRAM_1|dataout [4] $end
+$var wire 1 *# ROM_RAM_1|SRAM_1|dataout [3] $end
+$var wire 1 +# ROM_RAM_1|SRAM_1|dataout [2] $end
+$var wire 1 ,# ROM_RAM_1|SRAM_1|dataout [1] $end
+$var wire 1 -# ROM_RAM_1|SRAM_1|dataout [0] $end
+$var wire 1 .# address [11] $end
+$var wire 1 /# address [10] $end
+$var wire 1 0# address [9] $end
+$var wire 1 1# address [8] $end
+$var wire 1 2# address [7] $end
+$var wire 1 3# address [6] $end
+$var wire 1 4# address [5] $end
+$var wire 1 5# address [4] $end
+$var wire 1 6# address [3] $end
+$var wire 1 7# address [2] $end
+$var wire 1 8# address [1] $end
+$var wire 1 9# address [0] $end
+$var wire 1 :# addr~combout [11] $end
+$var wire 1 ;# addr~combout [10] $end
+$var wire 1 <# addr~combout [9] $end
+$var wire 1 =# addr~combout [8] $end
+$var wire 1 ># addr~combout [7] $end
+$var wire 1 ?# addr~combout [6] $end
+$var wire 1 @# addr~combout [5] $end
+$var wire 1 A# addr~combout [4] $end
+$var wire 1 B# addr~combout [3] $end
+$var wire 1 C# addr~combout [2] $end
+$var wire 1 D# addr~combout [1] $end
+$var wire 1 E# addr~combout [0] $end
+$var wire 1 F# ROM_RAM_1|SROM_2|data_out [7] $end
+$var wire 1 G# ROM_RAM_1|SROM_2|data_out [6] $end
+$var wire 1 H# ROM_RAM_1|SROM_2|data_out [5] $end
+$var wire 1 I# ROM_RAM_1|SROM_2|data_out [4] $end
+$var wire 1 J# ROM_RAM_1|SROM_2|data_out [3] $end
+$var wire 1 K# ROM_RAM_1|SROM_2|data_out [2] $end
+$var wire 1 L# ROM_RAM_1|SROM_2|data_out [1] $end
+$var wire 1 M# ROM_RAM_1|SROM_2|data_out [0] $end
+$var wire 1 N# ROM_RAM_1|SROM_1|data_out [7] $end
+$var wire 1 O# ROM_RAM_1|SROM_1|data_out [6] $end
+$var wire 1 P# ROM_RAM_1|SROM_1|data_out [5] $end
+$var wire 1 Q# ROM_RAM_1|SROM_1|data_out [4] $end
+$var wire 1 R# ROM_RAM_1|SROM_1|data_out [3] $end
+$var wire 1 S# ROM_RAM_1|SROM_1|data_out [2] $end
+$var wire 1 T# ROM_RAM_1|SROM_1|data_out [1] $end
+$var wire 1 U# ROM_RAM_1|SROM_1|data_out [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+0"
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0b
+0a
+0`
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0U
+0T
+0S
+xc
+0d
+1e
+xf
+1g
+1h
+1i
+0j
+0k
+0l
+1m
+1n
+0o
+0p
+1q
+0r
+0s
+0t
+0u
+0v
+0w
+1x
+0y
+0z
+1{
+1|
+0}
+0~
+1!!
+0"!
+0#!
+0$!
+1%!
+1&!
+0'!
+1(!
+1)!
+0*!
+0+!
+0,!
+0-!
+0.!
+1/!
+00!
+01!
+12!
+03!
+04!
+05!
+06!
+07!
+08!
+09!
+0:!
+0;!
+0<!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+0F!
+0G!
+0H!
+0I!
+0J!
+0K!
+0L!
+0M!
+0N!
+0O!
+0P!
+0Q!
+0R!
+0S!
+0T!
+0U!
+0V!
+0W!
+0X!
+0Y!
+0Z!
+0[!
+0\!
+0]!
+0^!
+0_!
+0`!
+0a!
+0b!
+0c!
+0d!
+0e!
+0f!
+0g!
+0h!
+0i!
+0j!
+0k!
+0l!
+0m!
+0n!
+0o!
+0p!
+0q!
+0r!
+0s!
+0t!
+0u!
+0v!
+0w!
+0x!
+0y!
+0z!
+0{!
+0|!
+0}!
+0~!
+0!"
+1""
+0#"
+0$"
+0%"
+0&"
+0'"
+0("
+0)"
+0*"
+0+"
+0,"
+0-"
+0."
+0/"
+00"
+01"
+02"
+03"
+04"
+05"
+06"
+07"
+08"
+09"
+0:"
+0;"
+0<"
+0="
+0>"
+0?"
+0@"
+0A"
+0B"
+0C"
+0D"
+0E"
+0F"
+0G"
+0H"
+0I"
+0J"
+0K"
+0L"
+0M"
+0N"
+0O"
+0P"
+0Q"
+0R"
+0S"
+0T"
+0U"
+0V"
+0W"
+0X"
+0Y"
+0Z"
+0["
+xk"
+xj"
+xi"
+xh"
+xg"
+xf"
+xe"
+zd"
+xc"
+xb"
+xa"
+x`"
+x_"
+z^"
+x]"
+z\"
+x{"
+xz"
+xy"
+xx"
+xw"
+xv"
+xu"
+zt"
+xs"
+xr"
+xq"
+xp"
+xo"
+zn"
+xm"
+zl"
+x-#
+x,#
+x+#
+x*#
+x)#
+x(#
+x'#
+z&#
+x%#
+x$#
+x##
+x"#
+x!#
+z~"
+x}"
+z|"
+09#
+08#
+07#
+06#
+05#
+04#
+03#
+02#
+z1#
+z0#
+z/#
+z.#
+0E#
+0D#
+0C#
+0B#
+0A#
+0@#
+0?#
+0>#
+z=#
+z<#
+z;#
+z:#
+0M#
+0L#
+0K#
+0J#
+0I#
+0H#
+0G#
+0F#
+0U#
+0T#
+zS#
+0R#
+zQ#
+0P#
+0O#
+0N#
+$end
+#40000
+1"
+1j
+0c
+19#
+18#
+1l!
+1h!
+1S!
+1K!
+1I!
+1:!
+10!
+1+!
+1Q!
+1m!
+1i!
+1T!
+1;!
+16!
+1,!
+0S!
+1I#
+1M#
+0T!
+1U!
+0I#
+18!
+14"
+0U!
+1,"
+04"
+#60000
+0"
+0j
+1c
+#1000000
