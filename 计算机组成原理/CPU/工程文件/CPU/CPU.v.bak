@@ -1,0 +1,10 @@
+module CPU(clk,a,b,result,c,z,n,ov);
+	input clk;
+	input [15:0]a,b;
+	output [15:0]result;
+	output c,z,n,ov;
+	
+	always@(a)
+		begin
+			
+		end
