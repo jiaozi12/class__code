@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -17.424
+TNS   : -1781.488
+
+Type  : Setup 'Instruction_system:comb_105|op[0]'
+Slack : -8.561
+TNS   : -8.561
+
+Type  : Setup 'clr'
+Slack : -1.683
+TNS   : -15.619
+
+Type  : Setup 'Instruction_system:comb_105|address[6]'
+Slack : -0.872
+TNS   : -4.018
+
+Type  : Hold 'Instruction_system:comb_105|address[6]'
+Slack : -5.632
+TNS   : -114.092
+
+Type  : Hold 'clk'
+Slack : -0.974
+TNS   : -2.610
+
+Type  : Hold 'Instruction_system:comb_105|op[0]'
+Slack : 0.728
+TNS   : 0.000
+
+Type  : Hold 'clr'
+Slack : 1.100
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -1.583
+TNS   : -407.527
+
+Type  : Minimum Pulse Width 'clr'
+Slack : -1.583
+TNS   : -41.123
+
+Type  : Minimum Pulse Width 'Instruction_system:comb_105|address[6]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Instruction_system:comb_105|op[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

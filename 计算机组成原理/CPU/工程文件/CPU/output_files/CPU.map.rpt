@@ -1,0 +1,630 @@
+Analysis & Synthesis report for CPU
+Tue Dec 18 22:55:38 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "Instruction_system:comb_105|register:register_1"
+ 13. Port Connectivity Checks: "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++-----------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Dec 18 22:55:38 2018            ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name               ; CPU                                              ;
+; Top-level Entity Name       ; CPU                                              ;
+; Family                      ; Cyclone                                          ;
+; Total logic elements        ; 800                                              ;
+; Total pins                  ; 30                                               ;
+; Total virtual pins          ; 0                                                ;
+; Total memory bits           ; 0                                                ;
+; Total PLLs                  ; 0                                                ;
++-----------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP1C12Q240C8       ;                    ;
+; Top-level entity name                                                      ; CPU                ; CPU                ;
+; Family name                                                                ; Cyclone            ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; SRAM.v                           ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/SRAM.v               ;         ;
+; SROM.v                           ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/SROM.v               ;         ;
+; SROM2.v                          ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/SROM2.v              ;         ;
+; register.v                       ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/register.v           ;         ;
+; decoder_24.v                     ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/decoder_24.v         ;         ;
+; ROM_and_RAM.v                    ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/ROM_and_RAM.v        ;         ;
+; Instruction_system.v             ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/Instruction_system.v ;         ;
+; CPU.v                            ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/CPU.v                ;         ;
+; Alu16.v                          ; yes             ; User Verilog HDL File  ; C:/Users/qiqi/Desktop/CPU/Alu16.v              ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 800   ;
+;     -- Combinational with no register       ; 631   ;
+;     -- Register only                        ; 49    ;
+;     -- Combinational with a register        ; 120   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 378   ;
+;     -- 3 input functions                    ; 182   ;
+;     -- 2 input functions                    ; 178   ;
+;     -- 1 input functions                    ; 13    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 634   ;
+;     -- arithmetic mode                      ; 166   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 8     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 169   ;
+; Total logic cells in carry chains           ; 177   ;
+; I/O pins                                    ; 30    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 154   ;
+; Total fan-out                               ; 2779  ;
+; Average fan-out                             ; 3.35  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++----------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node       ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                       ; Library Name ;
++----------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------+--------------+
+; |CPU                             ; 800 (16)    ; 169          ; 0           ; 30   ; 0            ; 631 (1)      ; 49 (7)            ; 120 (8)          ; 177 (8)         ; 0 (0)      ; |CPU                                                                      ; work         ;
+;    |Alu16:comb_106|              ; 205 (205)   ; 0            ; 0           ; 0    ; 0            ; 205 (205)    ; 0 (0)             ; 0 (0)            ; 72 (72)         ; 0 (0)      ; |CPU|Alu16:comb_106                                                       ; work         ;
+;    |Instruction_system:comb_105| ; 579 (421)   ; 154          ; 0           ; 0    ; 0            ; 425 (267)    ; 42 (42)           ; 112 (112)        ; 97 (97)         ; 0 (0)      ; |CPU|Instruction_system:comb_105                                          ; work         ;
+;       |ROM_and_RAM:ROM_RAM_1|    ; 150 (31)    ; 0            ; 0           ; 0    ; 0            ; 150 (31)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1                    ; work         ;
+;          |SRAM:SRAM_1|           ; 36 (36)     ; 0            ; 0           ; 0    ; 0            ; 36 (36)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1        ; work         ;
+;          |SRAM:SRAM_2|           ; 13 (13)     ; 0            ; 0           ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2        ; work         ;
+;          |SRAM:SRAM_3|           ; 13 (13)     ; 0            ; 0           ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3        ; work         ;
+;          |SROM2:SROM_2|          ; 35 (35)     ; 0            ; 0           ; 0    ; 0            ; 35 (35)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2       ; work         ;
+;          |SROM:SROM_1|           ; 18 (18)     ; 0            ; 0           ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1        ; work         ;
+;          |decoder_24:decoder|    ; 4 (4)       ; 0            ; 0           ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder ; work         ;
+;       |register:register_1|      ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instruction_system:comb_105|register:register_1                      ; work         ;
++----------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                                 ;
++----------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------------+
+; Latch Name                                                                 ; Latch Enable Signal                                                           ; Free of Timing Hazards ;
++----------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------------+
+; Alu16:comb_106|C                                                           ; Alu16:comb_106|Mux18                                                          ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[7]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[7]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[7] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[7]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[6]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[6]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[6] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[6]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[5]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[5]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[5] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[5]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[4]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[4]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[4] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[4]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[0]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[0]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[0] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[0]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[1]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[1]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[1] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[1]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[3]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[3]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[3] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[3]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[2]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[2]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2|data_out[2] ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[2]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[8]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[8]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[0]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[8]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[9]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[9]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[1]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[9]   ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[10]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[10]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[2]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[10]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[11]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[11]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[3]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[11]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[12]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[12]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[4]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[12]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[13]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[13]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[5]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[13]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[14]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[14]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[6]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[14]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[7]  ; Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder|Decoder0 ; yes                    ;
+; Number of user-specified and inferred latches = 62                         ;                                                                               ;                        ;
++----------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; address[0]~reg0                        ; Merged with pc[0]  ;
+; pc[8..31]                              ; Lost fanout        ;
+; Total Number of Removed Registers = 25 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 169   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 90    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |CPU|Instruction_system:comb_105|a[14]                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |CPU|Instruction_system:comb_105|a[15]                       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CPU|Instruction_system:comb_105|b[9]                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CPU|Instruction_system:comb_105|b[5]                        ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CPU|Instruction_system:comb_105|register_index[3]           ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; Yes        ; |CPU|Instruction_system:comb_105|address[6]                  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |CPU|Instruction_system:comb_105|inst                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |CPU|Instruction_system:comb_105|inst                        ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; No         ; |CPU|Instruction_system:comb_105|inst                        ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |CPU|Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|Mux12 ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |CPU|Alu16:comb_106|Mux5                                     ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 42 LEs               ; 7 LEs                  ; No         ; |CPU|Alu16:comb_106|Mux10                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Instruction_system:comb_105|register:register_1"                                                                                                                                     ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_in ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
+; wr      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; wr[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; cs      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cs[-1]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1"                                                                                                                                  ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; wr     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; wr[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Dec 18 22:55:34 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file sram.v
+    Info (12023): Found entity 1: SRAM
+Info (12021): Found 1 design units, including 1 entities, in source file srom.v
+    Info (12023): Found entity 1: SROM
+Info (12021): Found 1 design units, including 1 entities, in source file srom2.v
+    Info (12023): Found entity 1: SROM2
+Info (12021): Found 1 design units, including 1 entities, in source file register.v
+    Info (12023): Found entity 1: register
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_24.v
+    Info (12023): Found entity 1: decoder_24
+Info (12021): Found 1 design units, including 1 entities, in source file rom_and_ram.v
+    Info (12023): Found entity 1: ROM_and_RAM
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_system.v
+    Info (12023): Found entity 1: Instruction_system
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.v
+    Info (12023): Found entity 1: CPU
+Info (12021): Found 1 design units, including 1 entities, in source file alu16.v
+    Info (12023): Found entity 1: Alu16
+Critical Warning (10846): Verilog HDL Instantiation warning at CPU.v(28): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at CPU.v(29): instance has no name
+Info (12127): Elaborating entity "CPU" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at CPU.v(16): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at CPU.v(21): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CPU.v(22): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CPU.v(23): variable "Z" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CPU.v(24): variable "N" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CPU.v(25): variable "OV" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "Instruction_system" for hierarchy "Instruction_system:comb_105"
+Warning (10230): Verilog HDL assignment warning at Instruction_system.v(27): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Instruction_system.v(28): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Instruction_system.v(39): truncated value with size 16 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Instruction_system.v(49): truncated value with size 16 to match size of target (8)
+Info (12128): Elaborating entity "ROM_and_RAM" for hierarchy "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1"
+Warning (10235): Verilog HDL Always Construct warning at ROM_and_RAM.v(13): variable "sign" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at ROM_and_RAM.v(13): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at ROM_and_RAM.v(13): all case item expressions in this case statement are onehot
+Warning (10240): Verilog HDL Always Construct warning at ROM_and_RAM.v(11): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "data_out[0]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[1]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[2]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[3]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[4]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[5]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[6]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[7]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[8]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[9]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[10]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[11]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[12]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[13]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[14]" at ROM_and_RAM.v(11)
+Info (10041): Inferred latch for "data_out[15]" at ROM_and_RAM.v(11)
+Info (12128): Elaborating entity "decoder_24" for hierarchy "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|decoder_24:decoder"
+Info (12128): Elaborating entity "SROM" for hierarchy "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1"
+Warning (10235): Verilog HDL Always Construct warning at SROM.v(43): variable "cs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at SROM.v(41): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
+Warning (10030): Net "data[63..33]" at SROM.v(6) has no driver or initial value, using a default initial value '0'
+Info (10041): Inferred latch for "data_out[0]" at SROM.v(43)
+Info (10041): Inferred latch for "data_out[1]" at SROM.v(43)
+Info (10041): Inferred latch for "data_out[2]" at SROM.v(43)
+Info (10041): Inferred latch for "data_out[3]" at SROM.v(43)
+Info (10041): Inferred latch for "data_out[4]" at SROM.v(43)
+Info (10041): Inferred latch for "data_out[5]" at SROM.v(43)
+Info (10041): Inferred latch for "data_out[6]" at SROM.v(43)
+Info (10041): Inferred latch for "data_out[7]" at SROM.v(43)
+Info (12128): Elaborating entity "SROM2" for hierarchy "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM2:SROM_2"
+Warning (10235): Verilog HDL Always Construct warning at SROM2.v(43): variable "cs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at SROM2.v(41): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
+Warning (10030): Net "data[63..33]" at SROM2.v(6) has no driver or initial value, using a default initial value '0'
+Info (10041): Inferred latch for "data_out[0]" at SROM2.v(43)
+Info (10041): Inferred latch for "data_out[1]" at SROM2.v(43)
+Info (10041): Inferred latch for "data_out[2]" at SROM2.v(43)
+Info (10041): Inferred latch for "data_out[3]" at SROM2.v(43)
+Info (10041): Inferred latch for "data_out[4]" at SROM2.v(43)
+Info (10041): Inferred latch for "data_out[5]" at SROM2.v(43)
+Info (10041): Inferred latch for "data_out[6]" at SROM2.v(43)
+Info (10041): Inferred latch for "data_out[7]" at SROM2.v(43)
+Info (12128): Elaborating entity "SRAM" for hierarchy "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1"
+Warning (10235): Verilog HDL Always Construct warning at SRAM.v(22): variable "cs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at SRAM.v(22): variable "wr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at SRAM.v(24): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at SRAM.v(25): variable "cs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at SRAM.v(25): variable "wr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at SRAM.v(20): inferring latch(es) for variable "dataout", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "dataout[0]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[1]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[2]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[3]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[4]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[5]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[6]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[7]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[8]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[9]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[10]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[11]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[12]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[13]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[14]" at SRAM.v(25)
+Info (10041): Inferred latch for "dataout[15]" at SRAM.v(25)
+Info (12128): Elaborating entity "register" for hierarchy "Instruction_system:comb_105|register:register_1"
+Warning (10235): Verilog HDL Always Construct warning at register.v(24): variable "cs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at register.v(26): variable "wr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at register.v(26): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at register.v(27): variable "wr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at register.v(22): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "data_out[0]" at register.v(24)
+Info (10041): Inferred latch for "data_out[1]" at register.v(24)
+Info (10041): Inferred latch for "data_out[2]" at register.v(24)
+Info (10041): Inferred latch for "data_out[3]" at register.v(24)
+Info (10041): Inferred latch for "data_out[4]" at register.v(24)
+Info (10041): Inferred latch for "data_out[5]" at register.v(24)
+Info (10041): Inferred latch for "data_out[6]" at register.v(24)
+Info (10041): Inferred latch for "data_out[7]" at register.v(24)
+Info (10041): Inferred latch for "data_out[8]" at register.v(24)
+Info (10041): Inferred latch for "data_out[9]" at register.v(24)
+Info (10041): Inferred latch for "data_out[10]" at register.v(24)
+Info (10041): Inferred latch for "data_out[11]" at register.v(24)
+Info (10041): Inferred latch for "data_out[12]" at register.v(24)
+Info (10041): Inferred latch for "data_out[13]" at register.v(24)
+Info (10041): Inferred latch for "data_out[14]" at register.v(24)
+Info (10041): Inferred latch for "data_out[15]" at register.v(24)
+Info (12128): Elaborating entity "Alu16" for hierarchy "Alu16:comb_106"
+Warning (10235): Verilog HDL Always Construct warning at Alu16.v(16): variable "op" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Alu16.v(18): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at Alu16.v(19): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at Alu16.v(20): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at Alu16.v(30): truncated value with size 17 to match size of target (16)
+Warning (10240): Verilog HDL Always Construct warning at Alu16.v(11): inferring latch(es) for variable "C", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Alu16.v(11): inferring latch(es) for variable "d", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "C" at Alu16.v(11)
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[1]" is missing source, defaulting to GND
+    Warning (12110): Net "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_in_ram[0]" is missing source, defaulting to GND
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[1]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[2]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[3]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[4]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[5]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[6]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[7]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[8]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[9]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[10]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[11]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[12]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[13]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[14]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[15]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|register:register_1|data_out[0]" is permanently enabled
+Info (276014): Found 4 instances of uninferred RAM logic
+    Info (276004): RAM logic "Instruction_system:comb_105|register:register_1|mem" is uninferred due to inappropriate RAM size
+    Info (276008): RAM logic "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|mem" is uninferred due to illegal secondary signals in read logic
+    Info (276008): RAM logic "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|mem" is uninferred due to illegal secondary signals in read logic
+    Info (276008): RAM logic "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|mem" is uninferred due to illegal secondary signals in read logic
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/qiqi/Desktop/CPU/db/CPU.ram0_register_ea496d89.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/qiqi/Desktop/CPU/db/CPU.ram0_SRAM_2d6562.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/qiqi/Desktop/CPU/db/CPU.ram0_SRAM_2d6562.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/qiqi/Desktop/CPU/db/CPU.ram0_SRAM_2d6562.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[6]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[7]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[5]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[4]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[15]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[0]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[1]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[14]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[13]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[12]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[11]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[10]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[9]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[8]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[3]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[2]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[6]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[7]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[5]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[4]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[15]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[0]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[1]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[14]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[13]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[12]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[11]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[10]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[9]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[8]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[3]" is permanently enabled
+Warning (14026): LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|data_out[2]" is permanently enabled
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[6]" merged with LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[7]"
+    Info (13026): Duplicate LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[6]" merged with LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[7]"
+    Info (13026): Duplicate LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[6]" merged with LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[7]"
+    Info (13026): Duplicate LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[4]" merged with LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SROM:SROM_1|data_out[2]"
+    Info (13026): Duplicate LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[13]" merged with LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_1|dataout[11]"
+    Info (13026): Duplicate LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[13]" merged with LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_2|dataout[11]"
+    Info (13026): Duplicate LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[13]" merged with LATCH primitive "Instruction_system:comb_105|ROM_and_RAM:ROM_RAM_1|SRAM:SRAM_3|dataout[11]"
+Warning (13012): Latch Alu16:comb_106|C has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Instruction_system:comb_105|op[2]
+Info (17049): 24 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/qiqi/Desktop/CPU/output_files/CPU.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 830 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 800 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 111 warnings
+    Info: Peak virtual memory: 4603 megabytes
+    Info: Processing ended: Tue Dec 18 22:55:38 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/qiqi/Desktop/CPU/output_files/CPU.map.smsg.
+
+
